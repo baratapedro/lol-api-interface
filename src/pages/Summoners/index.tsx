@@ -2,11 +2,25 @@ import { useEffect, useState } from 'react'
 import {
     useParams
   } from "react-router-dom";
-import { Header } from '../../components/Header';
-import { MainMatches } from '../../components/MainMatches';
 import axios from 'axios'
 import { IUser } from '../../interfaces/IUser'
 import { IMatches } from '../../interfaces/IMatches';
+import { DefaultBackground } from '../Home/styles';
+import { css } from "@emotion/react";
+import ClipLoader from "react-spinners/ClipLoader";
+import { Container } from './styles';
+import {
+  Link
+} from "react-router-dom";
+import { Card } from '../../components/Card';
+
+
+const override = css`
+        display: block;
+        margin: 0 auto;
+        position: fixed;
+        border: 3px solid #4169E1;
+    `;
 
 
 export function Summoners() {
@@ -22,15 +36,14 @@ export function Summoners() {
 
     async function searchSummoner() {
     
-      const user = await axios.get<IUser>(`https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${name}?api_key=RGAPI-dbe31bf4-3cc7-42b5-9b17-08f4ff07bb3b`)
+      const user = await axios.get<IUser>(`https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${name}?api_key=RGAPI-7423e740-fd27-4318-9b53-f242214d377f`)
   
-      
 
-      const matchIds = await axios.get<String[]>(`https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/${user.data.puuid}/ids?start=0&count=20&api_key=RGAPI-dbe31bf4-3cc7-42b5-9b17-08f4ff07bb3b`)
+      const matchIds = await axios.get<String[]>(`https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/${user.data.puuid}/ids?start=0&count=20&api_key=RGAPI-7423e740-fd27-4318-9b53-f242214d377f`)
   
 
       const matches = await Promise.all(
-        matchIds.data.map(match => axios.get(`https://americas.api.riotgames.com/lol/match/v5/matches/${match}?api_key=RGAPI-dbe31bf4-3cc7-42b5-9b17-08f4ff07bb3b`)
+        matchIds.data.map(match => axios.get(`https://americas.api.riotgames.com/lol/match/v5/matches/${match}?api_key=RGAPI-7423e740-fd27-4318-9b53-f242214d377f`)
           .then(response => response.data)))   
           
           setMatches(matches)
@@ -41,12 +54,33 @@ export function Summoners() {
     searchSummoner()
   }, [name])
 
-    return (
-        <>
-        <Header />         
-        <MainMatches loading={loading} name={name} matches={matches}/>       
-        </>
-    )
+
+  return (
+    <>
+        {loading ? <DefaultBackground>
+                <ClipLoader loading={loading} css={override} size={100} />
+            </DefaultBackground> : (
+                 <DefaultBackground>
+
+                 <Container>
+
+                     {
+                         matches.map(match => {                         
+                             return <Card match={match} name={name} />
+                             
+                         })
+                     }
+
+                     <Link to={`/`}>
+                         <button
+                             className="button-home"
+                         >Home</button>
+                     </Link>
+                 </Container>
+             </DefaultBackground>
+            )}
+    </>
+)
 
 
   }

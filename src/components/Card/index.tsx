@@ -1,63 +1,48 @@
 import { Data, Container } from "./styles";
-import { IUser } from '../../interfaces/IUser'
 import { IParticipants } from "../../interfaces/IParticipants";
-import axios from 'axios'
-import { useEffect, useState } from "react";
 import data from '../../champions.json'
+import {
+    Link
+} from "react-router-dom";
+import { IMatches } from "../../interfaces/IMatches";
 
 
 interface CardProps {
-    frag: string,
-    championName: string,
-    win: boolean,
-    name: string | undefined
+    name: string | undefined,
+    match: IMatches
 }
 
-export function Card({championName, frag, win}: CardProps) {
+export const getIcon = (championName: string) => {
+    const champion = data.find(champion => champion.name == championName)
+    return champion?.icon
+}
 
+export function Card({ name, match }: CardProps) {
+
+    const currentSummoner: IParticipants = match.info.participants.find(participant => participant.summonerName == name)!
+
+    const frag = `${currentSummoner.kills}/${currentSummoner.deaths}/${currentSummoner.assists}`
 
     
-    const [icon, setIcon] = useState('')
 
+    return (
+        <Link className="card-text" to={`/summoners/${name}/${match.metadata.matchId}`}>
+            <Container win={currentSummoner.win}>
 
-    useEffect(() => {    
-            const championsList = data
-            
-            const currentName = championName
-            
-              championsList.map(data => {
-                if(currentName == data.name) {
-                    setIcon(data.icon)  
-                                  
-                }
-            })        
-            
-    }, [championName])
+                <Data>
+                    <img src={getIcon(currentSummoner.championName)} alt="Campeão" />
+                    <strong>{currentSummoner.championName}</strong>
+                </Data>
+                <Data>
+                    <strong>KDA</strong>
+                    <strong>{frag}</strong>
+                </Data>
+                <strong>
+                    <a
+                    >Click for more Details</a>
+                </strong>
+            </Container>
+        </Link >
 
-
-   
-    return(
-        
-        <Container win={win}>
-            
-            <Data>
-                <img src={icon} alt="Campeão" />
-                <strong>{championName}</strong>             
-            </Data>
-            <Data>
-                <strong>KDA</strong>
-                <strong>{frag}</strong>
-            </Data>
-
-            <strong>
-            
-            <a
-            >Click for more Details</a>
-            
-            
-            </strong>
-
-        </Container>
-        
     )
 }

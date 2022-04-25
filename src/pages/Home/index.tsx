@@ -1,12 +1,14 @@
-import { Header } from '../../components/Header';
-import { MainHome } from '../../components/MainHome';
+import { SearchInput } from '../../components/SearchInput';
+import { Container, DefaultBackground } from './styles';
 
 export function Home() {
-    
+
     return (
-        <>
-            <Header />
-            <MainHome/>
-        </>
-    )
-  }
+        <DefaultBackground>
+            <Container>
+                <h1>OP.GG</h1>
+                <SearchInput />
+            </Container>
+        </DefaultBackground>
+    );
+}
