@@ -1,12 +1,8 @@
-import { IParticipants } from "./IParticipants"
+import { IInfo } from "./IInfo"
+import { IMetadata } from "./IMetadata"
 
 export interface IMatches {
-    info: {
-        participants: IParticipants[],
-        gameDuration: number
-    },
-    metadata: {
-        matchId: string
-    }
+    info: IInfo,
+    metadata: IMetadata
 }
 
