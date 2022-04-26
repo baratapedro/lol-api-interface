@@ -36,14 +36,16 @@ export function Summoners() {
 
     async function searchSummoner() {
     
-      const user = await axios.get<IUser>(`https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${name}?api_key=RGAPI-7423e740-fd27-4318-9b53-f242214d377f`)
+      const key = import.meta.env.VITE_LOL_API_KEY
+
+      const user = await axios.get<IUser>(`https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${name}?api_key=${key}`)
   
 
-      const matchIds = await axios.get<String[]>(`https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/${user.data.puuid}/ids?start=0&count=20&api_key=RGAPI-7423e740-fd27-4318-9b53-f242214d377f`)
+      const matchIds = await axios.get<String[]>(`https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/${user.data.puuid}/ids?start=0&count=20&api_key=${key}`)
   
 
       const matches = await Promise.all(
-        matchIds.data.map(match => axios.get(`https://americas.api.riotgames.com/lol/match/v5/matches/${match}?api_key=RGAPI-7423e740-fd27-4318-9b53-f242214d377f`)
+        matchIds.data.map(match => axios.get(`https://americas.api.riotgames.com/lol/match/v5/matches/${match}?api_key=${key}`)
           .then(response => response.data)))   
           
           setMatches(matches)

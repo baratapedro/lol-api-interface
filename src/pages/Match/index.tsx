@@ -43,8 +43,9 @@ export function Match() {
     useEffect(() => {
 
         async function getSummonerData() {
+            const key = import.meta.env.VITE_LOL_API_KEY
 
-            const info = await axios.get<IMatches>(`https://americas.api.riotgames.com/lol/match/v5/matches/${match}?api_key=RGAPI-7423e740-fd27-4318-9b53-f242214d377f`).then(response => response.data.info)
+            const info = await axios.get<IMatches>(`https://americas.api.riotgames.com/lol/match/v5/matches/${match}?api_key=${key}`).then(response => response.data.info)
             setInfo(info)
             
             const currentSummoner: IParticipants = info.participants.find(participant => participant.summonerName == name)!
