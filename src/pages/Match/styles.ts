@@ -8,12 +8,10 @@ interface MainMatchDetails {
 
 export const Container = styled.div<MainMatchDetails>`
     background: whitesmoke;
-    width: 60%;
+    width: 900px;
     height: 45vw;
-    min-width: 700px;
-    min-height: 500px;
     max-height: 600px;
-    
+    min-height: 500px;
     border-radius: 10px;
 
     display: flex;
@@ -63,6 +61,30 @@ export const Container = styled.div<MainMatchDetails>`
         right: 1vw;
         bottom: 2vh;
     }
+
+    @media only screen and (max-width: 900px) { 
+
+    width: 100%;
+    font-size: 12px;
+
+    img {
+    width: 150px;
+    height: 150px;
+}
+
+}
+
+
+@media only screen and (max-width: 500px) { 
+
+    padding: 0;
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
     
 
 
@@ -79,6 +101,28 @@ export const SpellIcons = styled.div`
 
      margin-top: 20px;
  }
+
+ @media only screen and (max-width: 900px) { 
+
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width: 500px) { 
+    width: 100px;
+
+    img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
 `
 
 
@@ -88,7 +132,7 @@ flex-direction: column;
 align-items: flex-start;
 justify-content: center;
 
-margin-left: 50px;
+margin: 0 auto;
 
 height: 80%;
 
@@ -99,11 +143,40 @@ h1 {
     
 }
 
+@media only screen and (max-width: 900px) { 
+
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 500px) { 
+
+    align-items: flex-start;
+    margin: 0;
+}
+
 
 `
 
 export const Data = styled(DetailedData)`
 align-items: center;
+display: flex;
+
+
+@media only screen and (max-width: 500px) { 
+    text-align: center;
+    width: 50px;
+    gap: 0;
+    width: 100px;
+
+    strong {
+        align-self: center;
+    }
+
+
+}
 `
 
 export const Participants = styled.div`
@@ -130,6 +203,24 @@ export const Teams = styled.div`
     gap: 80px;
 
     width: 120%;
+
+    @media only screen and (max-width: 900px) { 
+
+        gap: 40px;
+        width: 50%;
+}
+
+@media only screen and (max-width: 500px) { 
+
+    font-size: 10px;
+    gap: 5px;
+
+
+    img {
+        width: 30px;
+        height: 30px;
+    }
+}
 
 `
 

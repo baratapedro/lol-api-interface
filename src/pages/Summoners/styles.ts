@@ -1,19 +1,13 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-    
-    background: url('https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt8979808f7798ecf5/6216ee875fe07272a8a2447a/2021_Key_art.jpg') fixed;
-    min-height: 82vh;
-    height: 100%;
-    width: 100%;
+
+    padding-top: 30px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-
     flex-direction: column;
+    gap: 30px;
 
-    position: relative;
-    
+    width: 700px;
 
 
     .button-home {
@@ -41,5 +35,19 @@ export const Container = styled.div`
         text-decoration: none;
     }
 
+    @media only screen and (max-width: 700px) { 
+        width: 100%;
+}
+
+
+@media only screen and (max-width: 932px) { 
+    margin-top: 50px;
+
+    .button-home {
+        top: 165px;
+        margin: 0 auto;
+        position: absolute;
+    }
+}
 
 `

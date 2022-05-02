@@ -6,12 +6,11 @@ interface CardProps {
 }
 
 export const Container = styled.main<CardProps>`
-    width: 700px;
-    margin: 0 auto;
     background: ${props => props.win ? "#81ACFF" : "#E84057"};
     &:hover {
         background: ${props => props.win ? darken(0.05 , "#81ACFF") : darken(0.03, "#E84057")};
     }
+
     height: 100px;
 
     display: flex;
@@ -20,11 +19,11 @@ export const Container = styled.main<CardProps>`
 
     padding: 30px;
     
-    margin-top: 30px;
 
     border-radius: 5px;
 
     color: #FDF5E6;
+
 
 `
 
@@ -40,5 +39,21 @@ export const Data = styled.div`
         border-radius: 30px;
         border: 1px solid #FDF5E6;
     }
+
+    @media only screen and (max-width: 700px) { 
+        
+        font-size: 14px;
+        
+        
+        
+       strong a{
+            width: 80px;
+            display: flex;
+            text-align: center;
+        }
+
+    
+}
+
 
 `

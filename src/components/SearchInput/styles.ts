@@ -7,7 +7,6 @@ export const Search = styled.div`
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    margin-top: 10px;
 
     input {
         height: 50px;
@@ -33,4 +32,13 @@ export const Search = styled.div`
             filter: brightness(0.9);
         }
     }
+
+    @media only screen and (max-width: 700px) { 
+        input {
+            width: 250px;
+        }
+        button {
+            width: 250px;
+        }
+}
 `

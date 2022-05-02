@@ -37,10 +37,12 @@ export function Card({ name, match }: CardProps) {
                     <strong>KDA</strong>
                     <strong>{frag}</strong>
                 </Data>
+                <Data>
                 <strong>
                     <a
                     >Click for more Details</a>
                 </strong>
+                </Data>
             </Container>
         </Link >
 
