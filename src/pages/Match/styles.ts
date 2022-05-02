@@ -13,7 +13,7 @@ export const Container = styled.div<MainMatchDetails>`
     max-height: 600px;
     min-height: 500px;
     border-radius: 10px;
-
+    margin-top: 90px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -48,24 +48,25 @@ export const Container = styled.div<MainMatchDetails>`
         &:hover {
             filter: brightness(0.9);
         }
+        
     }
 
     .button-back {
         position: fixed;
         left: 1vw;
-        top: 20vh;
+        top: 175px;
 
     }
 
     .button-home {
         position: fixed;
         right: 1vw;
-        bottom: 2vh;
+        top: 175px;
         
     }
 
     @media only screen and (max-width: 900px) { 
-
+       
     width: 100%;
     font-size: 12px;
 
@@ -76,16 +77,14 @@ export const Container = styled.div<MainMatchDetails>`
 
 .button-back {
         position: absolute;
-        left: 1vw;
-        top: 165px;
-        height: 40px;
+        left: 5px;
+        top: 170px;
     }
 
     .button-home {
         position: absolute;
-        right: 1vw;
-        top: 165px;
-        height: 40px;
+        right: 5px;
+        top: 170px;
         
     }
 
@@ -100,20 +99,6 @@ export const Container = styled.div<MainMatchDetails>`
     img {
         width: 100px;
         height: 100px;
-    }
-    
-    .button-home {
-        position: absolute;
-        left: 4vw;
-        top: 170px;
-        height: 40px;
-    }  
-
-    .button-back {
-        position: absolute;
-        left: 4vw;
-        top: 220px;
-        height: 40px;
     }
 
 }
