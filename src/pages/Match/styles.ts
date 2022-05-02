@@ -54,12 +54,14 @@ export const Container = styled.div<MainMatchDetails>`
         position: fixed;
         left: 1vw;
         top: 20vh;
+
     }
 
     .button-home {
         position: fixed;
         right: 1vw;
         bottom: 2vh;
+        
     }
 
     @media only screen and (max-width: 900px) { 
@@ -72,20 +74,49 @@ export const Container = styled.div<MainMatchDetails>`
     height: 150px;
 }
 
+.button-back {
+        position: absolute;
+        left: 1vw;
+        top: 165px;
+        height: 40px;
+    }
+
+    .button-home {
+        position: absolute;
+        right: 1vw;
+        top: 165px;
+        height: 40px;
+        
+    }
+
 }
 
 
 @media only screen and (max-width: 500px) { 
 
     padding: 0;
+    height: 80%;
 
     img {
         width: 100px;
         height: 100px;
     }
-}
-
     
+    .button-home {
+        position: absolute;
+        left: 4vw;
+        top: 170px;
+        height: 40px;
+    }  
+
+    .button-back {
+        position: absolute;
+        left: 4vw;
+        top: 220px;
+        height: 40px;
+    }
+
+}
 
 
 
@@ -214,7 +245,7 @@ export const Teams = styled.div`
 
     font-size: 10px;
     gap: 5px;
-
+    flex-direction: column;
 
     img {
         width: 30px;
