@@ -10,7 +10,6 @@ export const Container = styled.div<MainMatchDetails>`
     background: whitesmoke;
     width: 900px;
     height: 45vw;
-    max-height: 600px;
     min-height: 500px;
     border-radius: 10px;
     margin-top: 90px;
@@ -52,15 +51,15 @@ export const Container = styled.div<MainMatchDetails>`
     }
 
     .button-back {
-        position: fixed;
-        left: 1vw;
+        position: absolute;
+        left: 20px;
         top: 175px;
 
     }
 
     .button-home {
-        position: fixed;
-        right: 1vw;
+        position: absolute;
+        right: 20px;
         top: 175px;
         
     }
@@ -77,13 +76,13 @@ export const Container = styled.div<MainMatchDetails>`
 
 .button-back {
         position: absolute;
-        left: 5px;
+        left: 10px;
         top: 170px;
     }
 
     .button-home {
         position: absolute;
-        right: 5px;
+        right: 10px;
         top: 170px;
         
     }
@@ -94,7 +93,7 @@ export const Container = styled.div<MainMatchDetails>`
 @media only screen and (max-width: 500px) { 
 
     padding: 0;
-    height: 80%;
+    height: 700px;
 
     img {
         width: 100px;
@@ -199,7 +198,7 @@ export const Participants = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-
+    width: 200px;
     gap: 5px;
 
     &:first-child {
