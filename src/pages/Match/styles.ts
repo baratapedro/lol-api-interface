@@ -9,7 +9,7 @@ interface MainMatchDetails {
 export const Container = styled.div<MainMatchDetails>`
     background: whitesmoke;
     width: 900px;
-    height: 45vw;
+    height: 35vw;
     min-height: 500px;
     border-radius: 10px;
     margin-top: 90px;
