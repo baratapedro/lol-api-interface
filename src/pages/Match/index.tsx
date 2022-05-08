@@ -57,7 +57,7 @@ export function Match() {
             setTeam2(info.participants.filter(participant => participant.teamId != currentSummoner.teamId))
 
             setLoading(false)
-
+            
         }
 
         getSummonerData()

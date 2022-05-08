@@ -49,8 +49,8 @@ export function Summoners() {
           .then(response => response.data)))   
           
           setMatches(matches)
+
           
-    
       setLoading(false)  
     }
     searchSummoner()
