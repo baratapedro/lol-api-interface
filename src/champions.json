@@ -3286,7 +3286,7 @@
     {
     "id": "nunu",
     "key": "20",
-    "name": "Nunu & Willump",
+    "name": "Nunu",
     "title": "the Boy and His Yeti",
     "tags": [
     "Tank",
@@ -3749,6 +3749,17 @@
     },
     "description": "An apex predator, Rek'Sai is a merciless Void-spawn that tunnels beneath the ground to ambush and devour unsuspecting prey. Her insatiable hunger has laid waste to entire regions of the once-great empire of Shurima—merchants, traders, even armed..."
     },
+    {
+        "id": "rell",
+        "key": "526",
+        "name": "Rell",
+        "title": "the Iron Maiden",
+        "tags": [
+        "Tank"
+        ],
+        "icon": "https://opgg-static.akamaized.net/images/lol/champion/Rell.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_264&v=1651880086896",
+        "description": "The product of brutal experimentation at the hands of the Black Rose, Rell is a defiant, living weapon determined to topple Noxus. Her childhood was one of misery and horror, enduring unspeakable procedures to perfect and weaponize her magical control..."
+        },
     {
         "id": "renata",
         "key": "888",
@@ -5261,7 +5272,7 @@
     {
     "id": "velkoz",
     "key": "161",
-    "name": "Vel'Koz",
+    "name": "Velkoz",
     "title": "the Eye of the Void",
     "tags": [
     "Mage"
