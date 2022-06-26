@@ -498,6 +498,17 @@
     "description": "A traveler from beyond the stars, Bard is an agent of serendipity who fights to maintain a balance where life can endure the indifference of chaos. Many Runeterrans sing songs that ponder his extraordinary nature, yet they all agree that the cosmic..."
     },
     {
+        "id": "belveth",
+
+        "name": "Belveth",
+        "title": "The empress of the void",
+        "tags": [
+        "Fighter"
+        ],
+        "icon": "https://opgg-static.akamaized.net/images/lol/champion/Belveth.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160&v=1655962714367",
+        "description": "A nightmarish empress created from the raw material of an entire devoured city, Bel'Veth is the end of Runeterra itself... and the beginning of a monstrous reality of her own design. Driven by epochs of repurposed history, knowledge, and memories from the world above, she voraciously feeds an ever-expanding need for new experiences and emotions, consuming all that crosses her path. Yet her wants could never be sated by only one world as she turns her hungry eyes toward the Void's old masters..."
+        },
+    {
     "id": "blitzcrank",
     "key": "53",
     "name": "Blitzcrank",
